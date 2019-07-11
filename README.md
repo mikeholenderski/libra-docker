@@ -58,7 +58,7 @@ Execute the following commands inside the client Docker container running the Li
      public_key: ..., 
      signature: Signature(...), 
    }
-```
+   ```
 1. Now, let's try to get the next transaction
    ```
    libra% query tr 1 1 false
@@ -88,4 +88,4 @@ Execute the following commands inside the client Docker container running the Li
 1. Stop all the Docker containers:
    ```
    docker stop $(docker ps -aq)
-```
+   ```
