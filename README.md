@@ -37,55 +37,55 @@ Execute the following commands in separate Terminals.
 Execute the following commands inside the client Docker container running the Libra CLI.
 
 1. Confirm that we are running a fresh Libra chain by checking that there is only the genesis transaction
-  ```
-  libra% query tr 0 1 false
-  ```
-	This should return the genesis transaction, e.g.
-  ```
-  >> Getting committed transaction by range
-  Transaction at version 0: SignedTransaction { 
-    raw_txn: RawTransaction { 
-      sender: 0000000000000000000000000000000000000000000000000000000000000000, 
-      sequence_number: 0, 
-      payload: { 
-        transaction: genesis, 
-        args: []
-      }, 
-      max_gas_amount: 0, 
-      gas_unit_price: 0, 
-      expiration_time: 18446744073709551615s, 
-    }, 
-    public_key: ..., 
-    signature: Signature(...), 
-  }
-  ```
+   ```
+   libra% query tr 0 1 false
+   ```
+   This should return the genesis transaction, e.g.
+   ```
+   >> Getting committed transaction by range
+   Transaction at version 0: SignedTransaction { 
+     raw_txn: RawTransaction { 
+       sender: 0000000000000000000000000000000000000000000000000000000000000000, 
+       sequence_number: 0, 
+       payload: { 
+         transaction: genesis, 
+         args: []
+       }, 
+       max_gas_amount: 0, 
+       gas_unit_price: 0, 
+       expiration_time: 18446744073709551615s, 
+     }, 
+     public_key: ..., 
+     signature: Signature(...), 
+   }
+```
 1. Now, let's try to get the next transaction
-  ```
-  libra% query tr 1 1 false
-  ```
-	This should return not return any transactions.
+   ```
+   libra% query tr 1 1 false
+   ```
+   This should return not return any transactions.
 1. Create an account:
-  ```
-  libra% account create
-  ```
+   ```
+   libra% account create
+   ```
 1. Check that your account was created:
-  ```
-  libra% account list
-  ```
-	You should see a User account with index 0.
+   ```
+   libra% account list
+   ```
+   You should see a User account with index 0.
 1. Check that the created account 0 has no Libra:
-  ```
-  libra% query balance 0
-  ```
+   ```
+   libra% query balance 0
+   ```
 1. Mint 72 Libra to your account with index 0:
-  ```
-  libra% account mint 0 72
-  ```
+   ```
+   libra% account mint 0 72
+   ```
 1. Check that the minted Libra was added to your account 0:
-  ```
-  libra% query balance 0
-  ```
+   ```
+   libra% query balance 0
+   ```
 1. Stop all the Docker containers:
-  ```
-  docker stop $(docker ps -aq)
-  ```
+   ```
+   docker stop $(docker ps -aq)
+```
