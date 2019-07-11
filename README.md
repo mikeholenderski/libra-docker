@@ -1,4 +1,4 @@
-# Running a Libra network using Docker
+# Running a local Libra network using Docker
 
 This short tutorial describes how to setup a local Libra network running 4 validator nodes, one minter node and one client node using Docker. It assumes that you have a Docker Desktop installed and running on your machine. It has been tested on macOS.
 
@@ -32,7 +32,7 @@ Execute the following commands in separate Terminals.
    $ docker run --rm -it -e VALIDATOR_IP=<IP> --name libra_client libra_client_local
    ```
 
-### Test your setup
+### Test your Libra network
 
 Execute the following commands inside the client Docker container running the Libra CLI.
 
